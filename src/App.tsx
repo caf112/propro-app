@@ -7,7 +7,6 @@ import MyPage from 'pages/MyPage';
 import Register from 'pages/Register';
 import questionsJson from 'database/CodeQuestions.json'
 import 'styles/App.css';
-import { User } from 'lucide-react';
 
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
       <Route path="/" element={<Home />}></Route>
       <Route path="/game" element={<GamePage questionsJson={questionsJson} allQuestionsData={allQuestionsJsonsData} />}></Route>
       <Route path="/MyPage" element={<MyPage /> }></Route>
-      <Route path='/Register' element={<Register></Register>}></Route>
+      <Route path='/Register' element={<Register />}></Route>
     </Routes>
     </BrowserRouter>
     </UserProvider>
