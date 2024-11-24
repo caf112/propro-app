@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 const Header = () => {
     return (
         <div>
-            <h1>PRO×PRO</h1>
-            <Link to="/">ホーム画面へ</Link>
-            <Link to="/">MyPage</Link> {/*ハンバーガーメニューにする*/}
+            <Link to="/"><img src="/logo192.png" alt="titleLogo" /></Link><br></br>{/* iconにする */}
+            <Link to="/">ホーム画面へ</Link><br></br>{/* CSSでLinkをボタンに変更する */}
+            <Link to="/">メニュー</Link> {/*ハンバーガーメニューにする*/}
             
         </div>
     );
