@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Title = () => {
     return (
         <div>
-            <h1>PRO×PRO</h1>
-            <Link to="game">一人プレイ</Link>
+            <img src="/logo192.png" alt="titleLogo" /><br></br>
+            <Link to="/game">ゲームをする</Link>
         </div>
     );
 };

@@ -1,3 +1,116 @@
-.App {
+/* 全体のスタイル */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  box-sizing: border-box;
+}
+
+h1 {
   text-align: center;
+  margin: 20px 0;
+  color: #444;
+}
+
+/* コンテナスタイル */
+.fill-in-the-blank {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* コードエディタ風のスタイル */
+.code-editor {
+  background-color: #2d2d2d;
+  color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.code-snippet span {
+  white-space: pre-wrap;
+}
+
+.blank-select {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.blank-select:focus {
+  outline: 2px solid #888;
+}
+
+/* ボタンのスタイル */
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: 2px solid #0056b3;
+}
+
+/* フィードバックメッセージ */
+.feedback {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.feedback.correct {
+  color: #28a745;
+}
+
+.feedback.incorrect {
+  color: #dc3545;
+}
+
+/* 質問リストのスタイル */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  list-style-type: disc;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* GamePageの全体コンテナ */
+.game-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.game-page h2 {
+  margin-bottom: 20px;
+  color: #666;
 }

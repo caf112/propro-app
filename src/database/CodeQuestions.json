@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "codeSnippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Document</title>\n  <link rel=\"stylesheet\" href=\"__\">\n</head>\n<body>\n  <h1>Hello, World!</h1>\n  <script src=\"__\"></script>\n</body>\n</html>",
+      "options": ["style.css", "app.js", "script.js", "main.css"],
+      "answer": ["style.css", "script.js"]
+    },
+    {
+      "id": 2,
+      "codeSnippet": "function greet() {\n  console.log(\"__\");\n}",
+      "options": ["Hello, World!", "Hi there!", "Greetings!"],
+      "answer": "Hello, World!"
+    },
+    {
+      "id": 3,
+      "codeSnippet": "const add = (a, b) => {\n  return a __ b;\n}",
+      "options": ["+", "-", "*", "/"],
+      "answer": "+"
+    },
+    {
+      "id": 4,
+      "codeSnippet": "if (score __ 50) {\n  console.log(\"合格です！\");\n}",
+      "options": [">", "<", ">=", "<="],
+      "answer": ">="
+    }
+  ]
+  

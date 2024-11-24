@@ -1,15 +1,26 @@
-import Title from "components/Title";
-import GameContent from "components/GameContent";
-import Header from "components/Header";
-import { QuizGameProps } from "Domain/Types";
+import React from 'react';
+import { GamePageType } from 'Domain/Types';
+import 'styles/App.css';
 
-const GamePage = ({playerName}: QuizGameProps) => {
-    return (
-        <div>
-            <Header />
-            <GameContent playerName={playerName} />
-        </div>
-    );
+const GamePage: React.FC<GamePageType> = ({ questionsJson, allQuestionsData }) => {
+  return (
+    <div>
+      <h1>Game Page</h1>
+      <div>
+        <h2>All Questions</h2>
+        {allQuestionsData.map((question) => (
+          <div key={question.id}>
+            <p>{question.codeSnippet}</p>
+            <ul>
+              {question.options.map((option, index) => (
+                <li key={index}>{option}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default GamePage;
