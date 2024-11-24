@@ -1,8 +1,11 @@
+import GameContent from 'components/features/game/ClozeGame'
 import React from 'react'
 
 const GamePage = () => {
   return (
-    <div>GamePage</div>
+    <div>
+      <GameContent />
+    </div>
   )
 }
 

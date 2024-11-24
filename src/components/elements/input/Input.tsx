@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { FC, ChangeEvent } from 'react';
 
-const Input = () => {
-  return (
-    <div>Input</div>
-  )
+interface InputProps {
+  type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
+  name: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  disabled?: boolean;
+  className?: string;
 }
 
-export default Input
+const Input: FC<InputProps> = ({
+  type = 'text',
+  name,
+  value,
+  onChange,
+  placeholder = '',
+  disabled = false,
+  className = '',
+}) => {
+  return (
+    <input
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      disabled={disabled}
+      className={`input ${className}`}
+    />
+  );
+};
+
+export default Input;
