@@ -1,4 +1,4 @@
-import * as Titles from "views/components/features/title/Index";
+import * as Titles from "components/features/title/Index";
 
 const Home = () => {
     return (

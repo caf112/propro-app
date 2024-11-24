@@ -20,3 +20,11 @@ export type GamePageType = {
 
 // GameContent で使用するプロパティの型定義
 export type GameContentType = GamePageType; // 同一の構造を再利用
+
+
+
+
+
+export interface ChangeButtonProps {
+  path: string;
+}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Route,Routes,BrowserRouter } from 'react-router-dom';
 import { UserProvider } from 'UserContext';
-import Home from 'views/pages/Home';
-import GamePage from 'views/pages/GamePage';
-import MyPage from 'views/pages/MyPage';
-import Register from 'views/pages/Register';
-import questionsJson from 'database/CodeQuestions.json'
+import Home from 'pages/Home';
+import GamePage from 'pages/GamePage';
+import MyPage from 'pages/MyPage';
+import Register from 'pages/Register';
+import questionsJson from 'datas/CodeQuestions.json'
 import 'styles/App.css';
 
 
