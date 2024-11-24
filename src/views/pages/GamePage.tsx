@@ -1,5 +1,5 @@
 import React from 'react';
-import { GamePageType } from 'Domain/Types';
+import { GamePageType } from 'models/Types';
 import 'styles/App.css';
 
 const GamePage: React.FC<GamePageType> = ({ questionsJson, allQuestionsData }) => {

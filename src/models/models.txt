@@ -1,0 +1,6 @@
+ここは人によってはentities、types、interfaces等、様々な名付け方をしそうですが、自分はmodels、entitiesの二択でmodelsにしました。好きな名前にするといいと思います。
+modelごとにファイルを分けています。
+また、servicesで加工したデータと、repositoriesで取得したデータの区別が付きやすいように、
+servicesで生成するオブジェクトについては、モデル名にXXXDataのようなサフィックスをつけるようにしています。
+
+レイヤードアーキテクチャでいうDomain層、MVCでいうModelを担っています。

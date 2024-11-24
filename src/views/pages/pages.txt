@@ -1,0 +1,5 @@
+Next.js固有のディレクトリです。
+MVCでいうコントローラ的位置づけで、ユーザーからのリクエストを受け取って、getServerSidePropsやgetStaticPropsを用いながらservicesの関数を呼び出してレスポンスを返すコードを書きます。
+jsxを書けるので、ここに直接jsxを書いてもいいのですが、見た目部分は分けたかったので、大部分はcomponentsで定義し、pages配下ではcomponentsで定義されたコンポーネントを呼び出して、jsxを組み立てるという構成にしています。
+
+レイヤードアーキテクチャでいうUI層とApplication層の紐付け、MVCでいうControllerを担っています。

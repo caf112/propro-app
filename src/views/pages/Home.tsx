@@ -1,9 +1,9 @@
-import Title from "components/Title";
+import * as Titles from "views/components/features/title/Index";
 
 const Home = () => {
     return (
         <div>
-            <Title />
+            <Titles.Title />
         </div>
     );
 };
