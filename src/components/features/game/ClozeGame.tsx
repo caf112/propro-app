@@ -12,7 +12,7 @@ const ClozeGame: React.FC = () => {
   const currentQuestion: ClozeProblem = clozeProblems[currentQuestionIndex];
 
   const handleAnswer = (userAnswer: string) => {
-    if (userAnswer.toLowerCase() === currentQuestion.answer.toLowerCase()) {
+    if (userAnswer === currentQuestion.answer) {
       alert('正解です！');
       setScore(score + 1);
     } else {
@@ -23,6 +23,7 @@ const ClozeGame: React.FC = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       alert(`ゲーム終了！あなたの得点は ${score + 1}/${clozeProblems.length} です。`);
+      // ゲームをリセットする場合
       setCurrentQuestionIndex(0);
       setScore(0);
     }
@@ -30,7 +31,7 @@ const ClozeGame: React.FC = () => {
 
   return (
     <div>
-      <h2>穴埋めゲーム</h2>
+      <h2>穴埋めゲーム（選択式）</h2>
       <ClozeQuestion questionData={currentQuestion} onAnswer={handleAnswer} />
       <p>
         問題 {currentQuestionIndex + 1} / {clozeProblems.length}

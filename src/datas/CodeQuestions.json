@@ -2,16 +2,19 @@
   {
     "id": 1,
     "question": "I ___ to school every day.",
-    "answer": "go"
+    "answer": "go",
+    "choices": ["go", "goes", "went", "gone"]
   },
   {
     "id": 2,
     "question": "She ___ playing the piano.",
-    "answer": "is"
+    "answer": "is",
+    "choices": ["are", "is", "am", "was"]
   },
   {
     "id": 3,
     "question": "They have ___ their homework.",
-    "answer": "finished"
+    "answer": "finished",
+    "choices": ["finish", "finishing", "finished", "finishes"]
   }
 ]
