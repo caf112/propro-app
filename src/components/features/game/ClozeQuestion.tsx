@@ -1,15 +1,12 @@
 import React, { useState,useEffect } from 'react';
 import { ClozeProblem } from 'models/Types';
 import Button from 'components/elements/button/Button';
+import { shuffleArray } from 'common/utils/ShaffleArray';
 
 interface ClozeQuestionProps {
   questionData: ClozeProblem;
   onAnswer: (userAnswer: string) => void;
 }
-
-const shuffleArray = <T,>(array: T[]): T[] => {
-    return [...array].sort(() => Math.random() - 0.5);
-  };
 
 const ClozeQuestion: React.FC<ClozeQuestionProps> = ({ questionData, onAnswer }) => {
     const [selectedChoice, setSelectedChoice] = useState<string>('');
