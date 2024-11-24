@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CodeProblem } from 'models/Types';
-import Input from 'components/elements/input/Input';
 import Button from 'components/elements/button/Button';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import html from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
+import css from 'react-syntax-highlighter/dist/esm/languages/hljs/css';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
+SyntaxHighlighter.registerLanguage('html', html);
+SyntaxHighlighter.registerLanguage('css', css);
 
 interface CodeProblemProps {
   problemData: CodeProblem;
@@ -36,54 +44,54 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
     setShowSolution(true);
   };
 
-  // コードをレンダリング
   const renderCode = () => {
-    return problemData.code.map((line, index) => {
-      const regex = /\[\[blank_(\d+)\]\]/g;
-      const parts = line.split(regex);
-      return (
-        <div key={index} style={{ whiteSpace: 'pre' }}>
-          {parts.map((part, idx) => {
-            if (idx % 2 === 0) {
-              return part;
-            } else {
-              const blankId = `blank_${part}`;
-              const blank = problemData.blanks.find(b => b.id === blankId);
-              if (!blank) return null;
+    const codeString = problemData.code.map((line) => {
+      return line.replace(/\[\[blank_(\d+)\]\]/g, (match, p1) => {
+        const blankId = `blank_${p1}`;
+        const blank = problemData.blanks.find(b => b.id === blankId);
+        const userAnswer = answers[blankId] || '';
+        const displayValue = showSolution ? blank!.answer : userAnswer || '___';
+        return displayValue;
+      });
+    }).join('\n');
 
-              const userAnswer = answers[blankId] || '';
+    return (
+      <SyntaxHighlighter language="html" style={docco}>
+        {codeString}
+      </SyntaxHighlighter>
+    );
+  };
 
-              if (showSolution) {
-                // 解答を表示
-                return (
-                  <span key={idx} style={{ backgroundColor: '#e0ffe0' }}>
-                    {blank.answer}
-                  </span>
-                );
-              } else {
-                // 選択肢を表示
-                return (
-                  <div key={idx} style={{ display: 'inline-block', margin: '0 4px' }}>
-                    <select
-                      value={userAnswer}
-                      onChange={(e) => handleChange(blankId, e.target.value)}
-                    >
-                      <option value="" disabled>
-                        {blank.placeholder}
-                      </option>
-                      {blank.choices.map((choice, choiceIdx) => (
-                        <option key={choiceIdx} value={choice}>
-                          {choice}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                );
-              }
-            }
-          })}
-        </div>
-      );
+  const renderInputs = () => {
+    return problemData.blanks.map((blank, index) => {
+      const userAnswer = answers[blank.id] || '';
+
+      if (showSolution) {
+        return (
+          <div key={index}>
+            <strong>{blank.placeholder}:</strong> {blank.answer}
+          </div>
+        );
+      } else {
+        return (
+          <div key={index}>
+            <strong>{blank.placeholder}:</strong>
+            <select
+              value={userAnswer}
+              onChange={(e) => handleChange(blank.id, e.target.value)}
+            >
+              <option value="" disabled>
+                選択してください
+              </option>
+              {blank.choices.map((choice, choiceIdx) => (
+                <option key={choiceIdx} value={choice}>
+                  {choice}
+                </option>
+              ))}
+            </select>
+          </div>
+        );
+      }
     });
   };
 
@@ -91,9 +99,8 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
     <div>
       <h2>{problemData.title}</h2>
       <p>{problemData.description}</p>
-      <pre style={{ backgroundColor: '#f5f5f5', padding: '16px' }}>
-        {renderCode()}
-      </pre>
+      {renderCode()}
+      <div>{renderInputs()}</div>
       <Button label="回答する" onClick={handleSubmit} />
       <Button label="解答を見る" onClick={handleShowSolution} />
     </div>
