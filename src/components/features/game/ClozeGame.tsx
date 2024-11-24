@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ClozeQuestion from './ClozeQuestion';
-import clozeProblemsData from 'datas/CodeQuestions.json';
+import clozeProblemsData from "datas/EnglishQuestions.json";
 import { ClozeProblem } from 'models/Types';
 
 const clozeProblems: ClozeProblem[] = clozeProblemsData;

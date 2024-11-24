@@ -1,4 +1,4 @@
-import GameContent from 'components/features/game/ClozeGame'
+import GameContent from 'components/features/game/CodeGame'
 import React from 'react'
 
 const GamePage = () => {

@@ -1,20 +1,59 @@
 [
   {
     "id": 1,
-    "question": "I ___ to school every day.",
-    "answer": "go",
-    "choices": ["go", "goes", "went", "gone"]
-  },
-  {
-    "id": 2,
-    "question": "She ___ playing the piano.",
-    "answer": "is",
-    "choices": ["are", "is", "am", "was"]
-  },
-  {
-    "id": 3,
-    "question": "They have ___ their homework.",
-    "answer": "finished",
-    "choices": ["finish", "finishing", "finished", "finishes"]
+    "title": "シンプルなカウンターの実装",
+    "description": "以下のコードの空欄を埋めて、クリックすると数値が増加するボタンを実装してください。",
+    "code": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>カウンター</title>",
+      "  <style>",
+      "    #counter { font-size: 2em; }",
+      "    /* CSSの追加スタイル */",
+      "    [[blank_1]]",
+      "  </style>",
+      "</head>",
+      "<body>",
+      "  <div id=\"counter\">0</div>",
+      "  <button id=\"incrementBtn\">増やす</button>",
+      "  <script>",
+      "    // JavaScriptコード",
+      "    document.getElementById('incrementBtn').addEventListener('click', function() {",
+      "      let counterElement = document.getElementById('[[blank_2]]');",
+      "      let count = parseInt(counterElement.textContent);",
+      "      count++;",
+      "      counterElement.[[blank_3]] = count;",
+      "    });",
+      "  </script>",
+      "</body>",
+      "</html>"
+    ],
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "CSSのコードを選択",
+        "answer": "#incrementBtn { font-size: 1.5em; }",
+        "choices": [
+          "#incrementBtn { font-size: 1.5em; }",
+          ".incrementBtn { font-size: 1.5em; }",
+          "#incrementBtn { font-size: 2em; }"
+        ]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "要素のIDを選択",
+        "answer": "counter",
+        "choices": ["counter", "incrementBtn", "button"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "プロパティを選択",
+        "answer": "textContent",
+        "choices": ["textContent", "innerHTML", "value"]
+      }
+    ]
   }
 ]
