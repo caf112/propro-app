@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { ClozeProblem } from 'models/Types';
 import Button from 'components/elements/button/Button';
 
@@ -7,8 +7,19 @@ interface ClozeQuestionProps {
   onAnswer: (userAnswer: string) => void;
 }
 
+const shuffleArray = <T,>(array: T[]): T[] => {
+    return [...array].sort(() => Math.random() - 0.5);
+  };
+
 const ClozeQuestion: React.FC<ClozeQuestionProps> = ({ questionData, onAnswer }) => {
     const [selectedChoice, setSelectedChoice] = useState<string>('');
+    const [shuffledChoices, setShuffledChoices] = useState<string[]>([]);
+
+    useEffect(() => {
+        // 選択肢をシャッフルしてステートに設定
+        const shuffled = shuffleArray(questionData.choices);
+        setShuffledChoices(shuffled);
+      }, [questionData]);
   
     const handleChoiceSelect = (choice: string) => {
       setSelectedChoice(choice);
@@ -27,7 +38,7 @@ const ClozeQuestion: React.FC<ClozeQuestionProps> = ({ questionData, onAnswer })
     <div>
       <p>{questionData.question}</p>
       <div>
-        {questionData.choices.map((choice, index) => (
+        {shuffledChoices.map((choice, index) => (
           <label key={index} style={{ display: 'block', marginBottom: '8px' }}>
             <input
               type="radio"
