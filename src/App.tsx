@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="/game" element={<GamePage questionsJson={questionsJson} allQuestionsData={allQuestionsJsonsData} />}></Route>
+      <Route path="/game" element={<GamePage />}></Route>
       <Route path="/MyPage" element={<MyPage /> }></Route>
       <Route path='/Register' element={<Register />}></Route>
     </Routes>
