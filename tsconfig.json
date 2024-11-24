@@ -23,5 +23,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/views/components/features/game/GameContent.tsx"  ]
 }
