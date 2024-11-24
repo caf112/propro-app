@@ -55,5 +55,109 @@
         "choices": ["textContent", "innerHTML", "value"]
       }
     ]
+  },
+  {
+    "id": 2,
+    "title": "クリックで背景色を変更",
+    "description": "クリックすると背景色が青に変更されるよう、コードを完成させてください。",
+    "code": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>背景色変更</title>",
+      "  <style>",
+      "    body { font-family: Arial, sans-serif; }",
+      "    /* CSSスタイル */",
+      "    [[blank_1]]",
+      "  </style>",
+      "</head>",
+      "<body>",
+      "  <button id=\"changeColorBtn\">色を変更</button>",
+      "  <script>",
+      "    document.getElementById('changeColorBtn').addEventListener('click', function() {",
+      "      document.body.style.[[blank_2]] = '[[blank_3]]';",
+      "    });",
+      "  </script>",
+      "</body>",
+      "</html>"
+    ],
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "CSSのコードを選択",
+        "answer": "#changeColorBtn { font-size: 1.2em; }",
+        "choices": [
+          "#changeColorBtn { font-size: 1.2em; }",
+          ".changeColorBtn { font-size: 1.2em; }",
+          "#changeColorBtn { background-color: blue; }"
+        ]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "プロパティを選択",
+        "answer": "backgroundColor",
+        "choices": ["backgroundColor", "color", "fontSize"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "色を選択",
+        "answer": "blue",
+        "choices": ["blue", "red", "green"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "文字の変更",
+    "description": "クリックすると文字が「Hello, World!」に変更されるようにしてください。",
+    "code": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>文字変更</title>",
+      "  <style>",
+      "    #text { font-size: 2em; color: red; }",
+      "    [[blank_1]]",
+      "  </style>",
+      "</head>",
+      "<body>",
+      "  <div id=\"text\">こんにちは</div>",
+      "  <button id=\"changeTextBtn\">変更</button>",
+      "  <script>",
+      "    document.getElementById('changeTextBtn').addEventListener('click', function() {",
+      "      document.getElementById('text').[[blank_2]] = '[[blank_3]]';",
+      "    });",
+      "  </script>",
+      "</body>",
+      "</html>"
+    ],
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "CSSのコードを選択",
+        "answer": "#changeTextBtn { font-size: 1.2em; }",
+        "choices": [
+          "#changeTextBtn { font-size: 1.2em; }",
+          "#changeTextBtn { color: red; }",
+          "#text { font-size: 1em; }"
+        ]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "プロパティを選択",
+        "answer": "textContent",
+        "choices": ["textContent", "innerHTML", "value"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "変更後のテキストを選択",
+        "answer": "Hello, World!",
+        "choices": ["Hello, World!", "こんにちは", "Goodbye!"]
+      }
+    ]
   }
 ]
