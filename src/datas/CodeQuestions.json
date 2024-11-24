@@ -1,27 +1,163 @@
 [
-    {
-      "id": 1,
-      "codeSnippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Document</title>\n  <link rel=\"stylesheet\" href=\"__\">\n</head>\n<body>\n  <h1>Hello, World!</h1>\n  <script src=\"__\"></script>\n</body>\n</html>",
-      "options": ["style.css", "app.js", "script.js", "main.css"],
-      "answer": ["style.css", "script.js"]
-    },
-    {
-      "id": 2,
-      "codeSnippet": "function greet() {\n  console.log(\"__\");\n}",
-      "options": ["Hello, World!", "Hi there!", "Greetings!"],
-      "answer": "Hello, World!"
-    },
-    {
-      "id": 3,
-      "codeSnippet": "const add = (a, b) => {\n  return a __ b;\n}",
-      "options": ["+", "-", "*", "/"],
-      "answer": "+"
-    },
-    {
-      "id": 4,
-      "codeSnippet": "if (score __ 50) {\n  console.log(\"合格です！\");\n}",
-      "options": [">", "<", ">=", "<="],
-      "answer": ">="
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "シンプルなカウンターの実装",
+    "description": "以下のコードの空欄を埋めて、クリックすると数値が増加するボタンを実装してください。",
+    "code": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>カウンター</title>",
+      "  <style>",
+      "    #counter { font-size: 2em; }",
+      "    /* CSSの追加スタイル */",
+      "    [[blank_1]]",
+      "  </style>",
+      "</head>",
+      "<body>",
+      "  <div id=\"counter\">0</div>",
+      "  <button id=\"incrementBtn\">増やす</button>",
+      "  <script>",
+      "    // JavaScriptコード",
+      "    document.getElementById('incrementBtn').addEventListener('click', function() {",
+      "      let counterElement = document.getElementById('[[blank_2]]');",
+      "      let count = parseInt(counterElement.textContent);",
+      "      count++;",
+      "      counterElement.[[blank_3]] = count;",
+      "    });",
+      "  </script>",
+      "</body>",
+      "</html>"
+    ],
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "CSSのコードを選択",
+        "answer": "#incrementBtn { font-size: 1.5em; }",
+        "choices": [
+          "#incrementBtn { font-size: 1.5em; }",
+          ".incrementBtn { font-size: 1.5em; }",
+          "#incrementBtn { font-size: 2em; }"
+        ]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "要素のIDを選択",
+        "answer": "counter",
+        "choices": ["counter", "incrementBtn", "button"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "プロパティを選択",
+        "answer": "textContent",
+        "choices": ["textContent", "innerHTML", "value"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "クリックで背景色を変更",
+    "description": "クリックすると背景色が青に変更されるよう、コードを完成させてください。",
+    "code": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>背景色変更</title>",
+      "  <style>",
+      "    body { font-family: Arial, sans-serif; }",
+      "    /* CSSスタイル */",
+      "    [[blank_1]]",
+      "  </style>",
+      "</head>",
+      "<body>",
+      "  <button id=\"changeColorBtn\">色を変更</button>",
+      "  <script>",
+      "    document.getElementById('changeColorBtn').addEventListener('click', function() {",
+      "      document.body.style.[[blank_2]] = '[[blank_3]]';",
+      "    });",
+      "  </script>",
+      "</body>",
+      "</html>"
+    ],
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "CSSのコードを選択",
+        "answer": "#changeColorBtn { font-size: 1.2em; }",
+        "choices": [
+          "#changeColorBtn { font-size: 1.2em; }",
+          ".changeColorBtn { font-size: 1.2em; }",
+          "#changeColorBtn { background-color: blue; }"
+        ]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "プロパティを選択",
+        "answer": "backgroundColor",
+        "choices": ["backgroundColor", "color", "fontSize"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "色を選択",
+        "answer": "blue",
+        "choices": ["blue", "red", "green"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "文字の変更",
+    "description": "クリックすると文字が「Hello, World!」に変更されるようにしてください。",
+    "code": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>文字変更</title>",
+      "  <style>",
+      "    #text { font-size: 2em; color: red; }",
+      "    [[blank_1]]",
+      "  </style>",
+      "</head>",
+      "<body>",
+      "  <div id=\"text\">こんにちは</div>",
+      "  <button id=\"changeTextBtn\">変更</button>",
+      "  <script>",
+      "    document.getElementById('changeTextBtn').addEventListener('click', function() {",
+      "      document.getElementById('text').[[blank_2]] = '[[blank_3]]';",
+      "    });",
+      "  </script>",
+      "</body>",
+      "</html>"
+    ],
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "CSSのコードを選択",
+        "answer": "#changeTextBtn { font-size: 1.2em; }",
+        "choices": [
+          "#changeTextBtn { font-size: 1.2em; }",
+          "#changeTextBtn { color: red; }",
+          "#text { font-size: 1em; }"
+        ]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "プロパティを選択",
+        "answer": "textContent",
+        "choices": ["textContent", "innerHTML", "value"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "変更後のテキストを選択",
+        "answer": "Hello, World!",
+        "choices": ["Hello, World!", "こんにちは", "Goodbye!"]
+      }
+    ]
+  }
+]
