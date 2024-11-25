@@ -6,6 +6,7 @@ import MyPage from 'pages/MyPage';
 import Register from 'pages/Register';
 import Result from 'pages/Result';
 import 'styles/App.css';
+import ProtectedRoute from 'components/features/auths/ProtectedRoute';
 
 
 function App() {
@@ -13,9 +14,21 @@ function App() {
     <UserProvider>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/game" element={<GamePage />}></Route>
-      <Route path="/MyPage" element={<MyPage /> }></Route>
+      <Route path="/" element={
+        <ProtectedRoute>
+           <Home />
+        </ProtectedRoute>}>
+      </Route>
+      <Route path="/game" element={
+        <ProtectedRoute>
+          <GamePage />
+        </ProtectedRoute>}>
+      </Route>
+      <Route path="/MyPage" element={
+        <ProtectedRoute>
+          <MyPage /> 
+        </ProtectedRoute>}>
+      </Route>
       <Route path="/Register" element={<Register />}></Route>
       <Route path="/Result" element={ <Result /> }></Route>
     </Routes>

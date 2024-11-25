@@ -1,16 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-
-interface User {
-  name: string;
-  email: string;
-  gitUserName: string;
-  githubRepo: string;
-}
-
-interface UserContextProps {
-  user: User;
-  setUser: (user: User) => void;
-}
+import { User,UserContextProps } from 'models/Types';
 
 const UserContext = createContext<UserContextProps | undefined>(undefined);
 

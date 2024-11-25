@@ -14,7 +14,7 @@ const GameScore: React.FC = () => {
     <div>
       <h2>ゲームスコア</h2>
         <p>あなたのスコア:{normalizedScore}点({score}/{totalScoreString})</p>
-        <p>あなたのスコア:{normalizedScore}点({normalizedScore.toFixed(1)}%)</p>
+        {/* <p>あなたのスコア:{normalizedScore}点({normalizedScore.toFixed(1)}%)</p> */}
     </div>
   )
 }
