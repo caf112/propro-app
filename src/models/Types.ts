@@ -53,3 +53,8 @@ export interface UserContextProps {
 export interface ProtectedRouteProps {
   children: ReactNode;
 }
+
+export interface CodeProblemProps {
+  problemData: CodeProblem;
+  onComplete: () => void;
+}

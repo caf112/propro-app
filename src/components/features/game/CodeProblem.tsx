@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CodeProblem } from 'models/Types';
+import { CodeProblemProps } from 'models/Types';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import html from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
@@ -12,10 +12,6 @@ SyntaxHighlighter.registerLanguage('javascript', js);
 SyntaxHighlighter.registerLanguage('html', html);
 SyntaxHighlighter.registerLanguage('css', css);
 
-interface CodeProblemProps {
-  problemData: CodeProblem;
-  onComplete: () => void;
-}
 
 const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onComplete }) => {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
@@ -28,7 +24,12 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
   };
 
   const handleShowSolution = () => {
-    setShowSolution(true);
+    const userConfirmed = window.confirm('本当に答えを見ますか？');
+  if (userConfirmed) {
+    setShowSolution(true); 
+  } else {
+    console.log('答えの表示をキャンセルしました。');
+  }
   };
 
   const getUserCode = () => {
