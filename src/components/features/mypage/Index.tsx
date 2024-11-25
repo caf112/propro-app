@@ -1,3 +1,3 @@
-import MyPageItems from "./MyPageItems";
+import UserItems from "./UserItems";
 
-export { MyPageItems };
+export { UserItems };

@@ -1,7 +1,7 @@
 import { useUser } from "UserContext";
 import * as Elements from "components/elements/Index"
 
-const MyPageItems = () => {
+const UserItems = () => {
 
     const {user} = useUser();
 
@@ -28,4 +28,4 @@ const MyPageItems = () => {
     );
 };
 
-export default MyPageItems;
+export default UserItems;

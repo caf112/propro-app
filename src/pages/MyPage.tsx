@@ -8,7 +8,7 @@ const MyPage = () => {
             <div>
                 <h2>マイページ</h2>
             </div>
-            <MyPages.MyPageItems />
+            <MyPages.UserItems />
         </div>
     );
 };
