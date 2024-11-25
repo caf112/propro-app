@@ -2,18 +2,11 @@ export interface ChangeButtonProps {
   path: string;
 }
 
-export interface ClozeProblem {
-  id: number;
-  question: string;
-  answer: string;
-  choices: string[];
-}
-
 export interface CodeProblem {
   id: number;
   title: string;
   description: string;
-  code: string[];
+  code: CodeSections;
   blanks: Blank[];
 }
 
@@ -22,4 +15,16 @@ export interface Blank {
   placeholder: string;
   answer: string;
   choices: string[];
+}
+
+export interface CodeSections {
+  html: string[];
+  css: string[];
+  js: string[];
+}
+
+export interface CodeRunnerProps {
+  htmlCode: string;
+  cssCode: string;
+  jsCode: string;
 }
