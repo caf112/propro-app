@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { CodeProblem } from 'models/Types';
-import Button from 'components/elements/button/Button';
-import CodeRunner from '../results/CodeRunner';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import html from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
 import css from 'react-syntax-highlighter/dist/esm/languages/hljs/css';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { useNavigate } from 'react-router-dom';
+import * as Elements from 'components/elements/Index'
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 SyntaxHighlighter.registerLanguage('html', html);
@@ -20,29 +20,11 @@ interface CodeProblemProps {
 const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onComplete }) => {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [showSolution, setShowSolution] = useState<boolean>(false);
-  const [showRunner, setShowRunner] = useState<boolean>(false);
-  const [userHtmlCode, setUserHtmlCode] = useState<string>('');
-  const [userCssCode, setUserCssCode] = useState<string>('');
-  const [userJsCode, setUserJsCode] = useState<string>('');
+
+  const navigate = useNavigate();
 
   const handleChange = (blankId: string, value: string) => {
     setAnswers({ ...answers, [blankId]: value });
-  };
-
-  const handleSubmit = () => {
-    let allCorrect = true;
-    for (const blank of problemData.blanks) {
-      if (answers[blank.id]?.trim() !== blank.answer.trim()) {
-        allCorrect = false;
-        break;
-      }
-    }
-    if (allCorrect) {
-      alert('正解です！');
-      onComplete();
-    } else {
-      alert('不正解です。再度ご確認ください。');
-    }
   };
 
   const handleShowSolution = () => {
@@ -68,6 +50,17 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
   };
 
   const handleRunCode = () => {
+
+    let correctCount = 0;
+    for (const blank of problemData.blanks) {
+      if (answers[blank.id]?.trim() !== blank.answer.trim()) {
+        correctCount++;
+      }
+    }
+
+    localStorage.setItem('Score',correctCount.toString());
+    localStorage.setItem('totalBlank',correctCount.toString());
+
     const { htmlCode, cssCode, jsCode } = getUserCode();
     localStorage.setItem('htmlCode', htmlCode);
     localStorage.setItem('cssCode', cssCode);
@@ -76,7 +69,7 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
     console.log("CSS Code:", cssCode);
     console.log("JS Code:", jsCode);
 
-    window.location.href = '/Result';
+    navigate("/Result");
   };
 
   const renderCodeSection = (language: string, code: string) => (
@@ -145,9 +138,8 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
 
       <div>{renderInputs()}</div>
 
-      <Button label="回答する" onClick={handleSubmit} />
-      <Button label="解答を見る" onClick={handleShowSolution} />
-      <Button label="コードを実行する" onClick={handleRunCode} />
+      <Elements.ResultButton path="/Result" label='コードを見る' onClick={handleRunCode} />
+      <Elements.ResultButton path='' label="解答を見る" onClick={handleShowSolution} />
     </div>
   );
 };
