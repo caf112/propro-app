@@ -69,13 +69,14 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
 
   const handleRunCode = () => {
     const { htmlCode, cssCode, jsCode } = getUserCode();
-    setUserHtmlCode(htmlCode);
-    setUserCssCode(cssCode);
-    setUserJsCode(jsCode);
-    setShowRunner(true);
+    localStorage.setItem('htmlCode', htmlCode);
+    localStorage.setItem('cssCode', cssCode);
+    localStorage.setItem('jsCode', jsCode);
     console.log("HTML Code:", htmlCode);
     console.log("CSS Code:", cssCode);
     console.log("JS Code:", jsCode);
+
+    window.location.href = '/preview';
   };
 
   const renderCodeSection = (language: string, code: string) => (
@@ -147,18 +148,6 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
       <Button label="回答する" onClick={handleSubmit} />
       <Button label="解答を見る" onClick={handleShowSolution} />
       <Button label="コードを実行する" onClick={handleRunCode} />
-
-      {showRunner && (
-        <div>
-          <h3>実行結果</h3>
-          <CodeRunner
-            htmlCode={userHtmlCode}
-            cssCode={userCssCode}
-            jsCode={userJsCode}
-          />
-          
-        </div>
-      )}
     </div>
   );
 };

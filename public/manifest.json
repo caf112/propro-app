@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "/usa/usa_niko.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "/usa/usa_syun_te.png",
       "type": "image/png",
       "sizes": "512x512"
     }

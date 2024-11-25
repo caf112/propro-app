@@ -7,6 +7,7 @@ import MyPage from 'pages/MyPage';
 import Register from 'pages/Register';
 import questionsJson from 'datas/CodeQuestions.json'
 import 'styles/App.css';
+import Preview from 'pages/Preview';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
       <Route path="/" element={<Home />}></Route>
       <Route path="/game" element={<GamePage />}></Route>
       <Route path="/MyPage" element={<MyPage /> }></Route>
-      <Route path='/Register' element={<Register />}></Route>
+      <Route path="/Register" element={<Register />}></Route>
+      <Route path="/Preview" element={ <Preview /> }></Route>
     </Routes>
     </BrowserRouter>
     </UserProvider>
