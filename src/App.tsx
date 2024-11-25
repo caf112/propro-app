@@ -14,10 +14,7 @@ function App() {
     <UserProvider>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={
-        <ProtectedRoute>
-           <Home />
-        </ProtectedRoute>}>
+      <Route path="/" element={<Home />}>
       </Route>
       <Route path="/game" element={
         <ProtectedRoute>
