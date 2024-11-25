@@ -4,7 +4,6 @@ import codeProblemsData from 'datas/CodeQuestions.json';
 import { CodeProblem } from 'models/Types';
 import { shuffleArray } from 'common/utils/ShaffleArray';
 
-const codeProblems: CodeProblem[] = codeProblemsData;
 
 const CodeGame: React.FC = () => {
   const [problems, setProblems] = useState<CodeProblem[]>([]);

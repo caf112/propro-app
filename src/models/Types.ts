@@ -1,5 +1,12 @@
 export interface ChangeButtonProps {
   path: string;
+  label: string;
+}
+
+export interface ResultButtonProps {
+  path:string;
+  label:string;
+  onClick: () => void;
 }
 
 export interface CodeProblem {

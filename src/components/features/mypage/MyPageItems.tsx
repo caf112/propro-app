@@ -7,22 +7,21 @@ const MyPageItems = () => {
 
     return (
         <div>
+            <div>
+                <Elements.ChangeButton path="/register" label="変更する"/>
+            </div>
             <ul>
                 <li>
                     名前：{user.name}
-                    <Elements.ChangeButton path="/register" />
                 </li>
                 <li>
                     email：{user.email}
-                    <Elements.ChangeButton path="/register"/>
                 </li>
                 <li>
                     Gitユーザー名：{user.gitUserName}
-                    <Elements.ChangeButton path="/register"/>
                 </li>
                 <li>
                     Githubリポジトリ：github.com/{user.gitUserName}/{user.githubRepo}
-                    <Elements.ChangeButton path="/register"/>
                 </li>
             </ul>
         </div>

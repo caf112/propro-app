@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { ChangeButtonProps } from 'models/Types';
 
-const ChangeButton: React.FC<ChangeButtonProps> = ({path}) => {
+const ChangeButton: React.FC<ChangeButtonProps> = ({path,label}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -10,7 +10,7 @@ const ChangeButton: React.FC<ChangeButtonProps> = ({path}) => {
     };
   return (
     <div>
-        <button onClick={handleClick}>変更する</button>
+        <button onClick={handleClick}>{label}</button>
     </div>
   )
 }
