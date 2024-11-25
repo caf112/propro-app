@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface ChangeButtonProps {
   path: string;
   label: string;
@@ -34,4 +36,20 @@ export interface CodeRunnerProps {
   htmlCode: string;
   cssCode: string;
   jsCode: string;
+}
+
+export interface User {
+  name: string;
+  email: string;
+  gitUserName: string;
+  githubRepo: string;
+}
+
+export interface UserContextProps {
+  user: User;
+  setUser: (user: User) => void;
+}
+
+export interface ProtectedRouteProps {
+  children: ReactNode;
 }
