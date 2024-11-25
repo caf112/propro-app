@@ -13,7 +13,7 @@ export interface CodeProblem {
   id: number;
   title: string;
   description: string;
-  code: string[];
+  code: CodeSections;
   blanks: Blank[];
 }
 
@@ -22,4 +22,10 @@ export interface Blank {
   placeholder: string;
   answer: string;
   choices: string[];
+}
+
+export interface CodeSections {
+  html: string[];
+  css: string[];
+  js: string[];
 }

@@ -21,6 +21,7 @@ const Button: FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={`button ${className}`}
+      style={{ marginRight: '8px', padding: '8px 16px' }}
     >
       {label}
     </button>
