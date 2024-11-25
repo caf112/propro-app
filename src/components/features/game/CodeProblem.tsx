@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CodeProblem } from 'models/Types';
 import Button from 'components/elements/button/Button';
-import CodeRunner from './CodeRunner';
+import CodeRunner from '../results/CodeRunner';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import html from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
@@ -76,7 +76,7 @@ const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onCompl
     console.log("CSS Code:", cssCode);
     console.log("JS Code:", jsCode);
 
-    window.location.href = '/preview';
+    window.location.href = '/Result';
   };
 
   const renderCodeSection = (language: string, code: string) => (

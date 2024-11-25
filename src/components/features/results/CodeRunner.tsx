@@ -1,10 +1,5 @@
 import React from 'react';
-
-interface CodeRunnerProps {
-  htmlCode: string;
-  cssCode: string;
-  jsCode: string;
-}
+import { CodeRunnerProps } from 'models/Types';
 
 const CodeRunner: React.FC<CodeRunnerProps> = ({ htmlCode, cssCode, jsCode }) => {
   const completeCode = `

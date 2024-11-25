@@ -22,3 +22,9 @@ export interface CodeSections {
   css: string[];
   js: string[];
 }
+
+export interface CodeRunnerProps {
+  htmlCode: string;
+  cssCode: string;
+  jsCode: string;
+}
