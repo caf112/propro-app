@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from 'UserContext';
 import { AwsAuthProps } from 'models/Types';
+import { Authenticator,useAuthenticator } from '@aws-amplify/ui-react';
 
 
 const RegisterForm = ({user}: AwsAuthProps) => {
@@ -11,6 +12,11 @@ const RegisterForm = ({user}: AwsAuthProps) => {
     // const [githubRepo,setGithubRepo] = useState('');
     const navigate = useNavigate();
     const {setUser} = useUser();
+
+    console.log("user object",{user});
+
+    // const mail = user?.attributes.email || "";
+    // console.log("attributes email:",{mail});
 
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault();
@@ -25,7 +31,7 @@ const RegisterForm = ({user}: AwsAuthProps) => {
         <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">名前：{user?.username} </label>
-                    <input type="text" id="name" value={username} onChange={(e) => setName(e.target.value) }></input>
+                    {/* <input type="text" id="name" value={username} onChange={(e) => setName(e.target.value) }></input> */}
                 </div>
                 <div>
                     <label htmlFor="email">メール：</label>

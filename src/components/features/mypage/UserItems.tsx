@@ -18,7 +18,7 @@ const UserItems = () => {
     return (
         <div>
             <div>
-                <Elements.ChangeButton path="/register" label="変更する"/>
+                <Elements.ChangeButton path="/register" label="変更する" />
             </div>
             <ul>
                 <li>

@@ -18,6 +18,7 @@ function App({ signOut, user }: AwsAuthProps ) {
 
   return (
     <div className="app-container">
+      {user && <button onClick={signOut}>サインアウト</button>}
       
     <UserProvider>
     <BrowserRouter>
@@ -25,14 +26,14 @@ function App({ signOut, user }: AwsAuthProps ) {
       <Route path="/" element={<Home signOut={signOut} user={user} />}>
       </Route>
       <Route path="/game" element={
-        // <ProtectedRoute >
+        <ProtectedRoute >
           <GamePage />
-        // </ProtectedRoute>
+        </ProtectedRoute>
         }>
       </Route>
       <Route path="/MyPage" element={
         // <ProtectedRoute>
-          <MyPage /> 
+          <MyPage signOut={signOut} user={user}/> 
         // </ProtectedRoute>
         }>
       </Route>
