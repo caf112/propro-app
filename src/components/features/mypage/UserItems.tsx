@@ -1,5 +1,6 @@
 import { useUser } from "UserContext";
 import * as Elements from "components/elements/Index"
+import { Link } from "react-router-dom";
 
 const UserItems = () => {
 
@@ -9,7 +10,7 @@ const UserItems = () => {
         return (
             <div>
                 <p>ログインしてください</p>
-
+                <Link to="/Register" className="button">ログイン</Link>
             </div>
         );
     }

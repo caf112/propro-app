@@ -17,7 +17,7 @@ function App({ signOut, user }: AwsAuthProps ) {
   console.log("app user:",user);
 
   return (
-    <div>
+    <div className="app-container">
       
     <UserProvider>
     <BrowserRouter>
