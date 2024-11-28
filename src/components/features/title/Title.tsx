@@ -3,17 +3,20 @@ import { AwsAuthProps } from "models/Types";
 import { withAuthenticator } from '@aws-amplify/ui-react';
 
 import awsExports from "aws-exports"
+import { useUser } from 'UserContext';
 
 Amplify.configure(awsExports);
 
-const Title = ({user}: AwsAuthProps) => {
+const Title = () => {
+    const {user } = useUser();
+
     console.log("title.username"+user);
     
     return (
         <div>
-            <img src="/usa/usa_niko.png" alt="titleLogo" />
+            <img src="/usa/usa_niko.png" alt="titleLogo" style={{ width: '300px', height: 'auto' }} />
             {user ? (
-                <h3>ようこそ、{user.username}さん</h3>
+                <h1>ようこそ、{user.username}さん</h1>
             ) : (
                 <h3>ログインしてください</h3>
             )}

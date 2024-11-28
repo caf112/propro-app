@@ -1,7 +1,7 @@
 import "@aws-amplify/ui-react/styles.css";
 
 import { Route,Routes,BrowserRouter } from 'react-router-dom';
-import { UserProvider } from 'UserContext';
+import { UserProvider, useUser } from 'UserContext';
 import Home from 'pages/Home';
 import GamePage from 'pages/GamePage';
 import MyPage from 'pages/MyPage';
@@ -14,6 +14,7 @@ import { AwsAuthProps } from 'models/Types';
 
 
 function App({ signOut, user }: AwsAuthProps ) {
+  console.log("app user:",user);
 
   return (
     <div>

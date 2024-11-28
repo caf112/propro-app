@@ -67,9 +67,9 @@ export interface AwsAuthProps {
 export interface User  {
   username: string;
   email: string;
-  gitUserName: string;
-  githubRepo: string;
-  [key: string]: any; // 必要に応じて追加
+  // gitUserName: string;
+  // githubRepo: string;
+  [key: string]: any; 
 };
 
 export interface UserContextType  {
@@ -78,5 +78,5 @@ export interface UserContextType  {
 };
 
 export interface UserProviderProps  {
-  children: ReactNode; // これが型エラーを解決します
+  children: ReactNode; 
 };
