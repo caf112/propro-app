@@ -1,27 +1,24 @@
-import { Link } from "react-router-dom";
-import { useUser } from "UserContext";
+import { Amplify } from 'aws-amplify'; 
+import { AwsAuthProps } from "models/Types";
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
-const Title = () => {
+import awsExports from "aws-exports"
 
-    const {user} = useUser();
+Amplify.configure(awsExports);
+
+const Title = ({user}: AwsAuthProps) => {
+    console.log("username"+user);
     
     return (
         <div>
             <img src="/usa/usa_niko.png" alt="titleLogo" />
-            {user.name ? (
-                <h3>ようこそ、{user.name}さん</h3>
+            {user ? (
+                <h3>ようこそ、{user.username}さん</h3>
             ) : (
                 <h3>ログインしてください</h3>
             )}
             <p>いっしょにうさぎをいじめよう＾＾</p>
-            <Link to="/game" className="button" >うさぎをいじめる（ゲームをする）</Link>
-            <Link to="/MyPage" className="button">マイページへ</Link>
-            {!user.name && (
-                <div>
-                    <Link to="/Register" className="button">新規登録</Link>
-                    <Link to="/" className="button">ログイン</Link>
-                </div>
-            )}
+            
         </div>
     );
 };

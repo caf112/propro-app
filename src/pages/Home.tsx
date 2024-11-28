@@ -1,9 +1,11 @@
 import * as Titles from "components/features/title/Index";
+import { AwsAuthProps } from "models/Types";
 
-const Home = () => {
+const Home = ({signOut,user}: AwsAuthProps ) => {
     return (
         <div>
-            <Titles.Title />
+            <Titles.Title signOut={signOut} user={user} />
+            <Titles.Dashboard signOut={signOut} user={user} />
         </div>
     );
 };

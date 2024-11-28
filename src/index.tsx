@@ -6,6 +6,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-    <App />
+  
+    <App signOut={function (): void {
+    throw new Error('Function not implemented.');
+  } } user={null} />
 );
 

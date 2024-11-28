@@ -58,3 +58,10 @@ export interface CodeProblemProps {
   problemData: CodeProblem;
   onComplete: () => void;
 }
+
+export interface AwsAuthProps {
+  signOut: () => void;
+  user: {
+    username: string;
+  } | null;
+}
