@@ -7,7 +7,7 @@ import awsExports from "aws-exports"
 Amplify.configure(awsExports);
 
 const Title = ({user}: AwsAuthProps) => {
-    console.log("username"+user);
+    console.log("title.username"+user);
     
     return (
         <div>

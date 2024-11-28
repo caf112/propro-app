@@ -38,12 +38,6 @@ export interface CodeRunnerProps {
   jsCode: string;
 }
 
-export interface User {
-  name: string;
-  email: string;
-  gitUserName: string;
-  githubRepo: string;
-}
 
 export interface UserContextProps {
   user: User;
@@ -62,6 +56,27 @@ export interface CodeProblemProps {
 export interface AwsAuthProps {
   signOut: () => void;
   user: {
-    username: string;
+    username: string,
+    attributes: {
+      email: string;
+    }
   } | null;
 }
+
+// 型定義
+export interface User  {
+  username: string;
+  email: string;
+  gitUserName: string;
+  githubRepo: string;
+  [key: string]: any; // 必要に応じて追加
+};
+
+export interface UserContextType  {
+  user: User | null;
+  setUser: (user: User | null) => void;
+};
+
+export interface UserProviderProps  {
+  children: ReactNode; // これが型エラーを解決します
+};

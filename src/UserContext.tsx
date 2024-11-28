@@ -1,22 +1,26 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
-import { User,UserContextProps } from 'models/Types';
+import { createContext, useContext, useState, ReactNode } from "react";
+import { UserContextType,UserProviderProps,User } from "models/Types";
 
-const UserContext = createContext<UserContextProps | undefined>(undefined);
 
-export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User>({ name: '', email: '', gitUserName: '',githubRepo: '' });
+// Contextの作成
+const UserContext = createContext<UserContextType | undefined>(undefined);
 
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
+// UserProviderコンポーネント
+export const UserProvider = ({ children }: UserProviderProps) => {
+    const [user, setUser] = useState<User | null>(null);
+
+    return (
+        <UserContext.Provider value={{ user, setUser }}>
+            {children}
+        </UserContext.Provider>
+    );
 };
 
+// ユーザー情報を取得するカスタムフック
 export const useUser = () => {
-  const context = useContext(UserContext);
-  if (!context) {
-    throw new Error('useUser must be used within a UserProvider');
-  }
-  return context;
+    const context = useContext(UserContext);
+    if (!context) {
+        throw new Error("useUser must be used within a UserProvider");
+    }
+    return context;
 };

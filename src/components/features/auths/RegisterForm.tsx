@@ -1,10 +1,11 @@
 import React, { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from 'UserContext';
+import { AwsAuthProps } from 'models/Types';
 
 
-const RegisterForm = () => {
-    const [name,setName] = useState('');
+const RegisterForm = ({signOut,user}: AwsAuthProps) => {
+    const [username,setName] = useState(user?.username || '');
     const [email,setEmail] = useState('');
     const [gitUserName,setGitUserName] = useState('');
     const [githubRepo,setGithubRepo] = useState('');
@@ -14,16 +15,16 @@ const RegisterForm = () => {
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault();
         
-        setUser({name,email,gitUserName,githubRepo});
-        console.log({name,email,gitUserName,githubRepo});
+        setUser({username,email,gitUserName,githubRepo});
+        console.log({username,email,gitUserName,githubRepo});
         navigate('/');
     };
   return (
     <div>
         <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">名前：</label>
-                    <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value) }></input>
+                    <label htmlFor="username">名前：{user?.username} </label>
+                    <input type="text" id="name" value={username} onChange={(e) => setName(e.target.value) }></input>
                 </div>
                 <div>
                     <label htmlFor="email">メール：</label>

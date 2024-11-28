@@ -2,6 +2,11 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { AwsAuthProps } from 'models/Types'
+import { Amplify } from 'aws-amplify'; 
+
+import awsExports from "aws-exports"
+
+Amplify.configure(awsExports);
     
     const Dashboard = ({signOut,user}: AwsAuthProps) => {
       return (
@@ -20,4 +25,4 @@ import { AwsAuthProps } from 'models/Types'
       )
     }
     
-    export default withAuthenticator(Dashboard)
+    export default Dashboard

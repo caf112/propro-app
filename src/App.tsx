@@ -1,8 +1,4 @@
-import { Amplify } from 'aws-amplify'; 
-import { withAuthenticator } from '@aws-amplify/ui-react';
 import "@aws-amplify/ui-react/styles.css";
-
-import awsExports from "./aws-exports"
 
 import { Route,Routes,BrowserRouter } from 'react-router-dom';
 import { UserProvider } from 'UserContext';
@@ -15,21 +11,13 @@ import 'styles/App.css';
 import ProtectedRoute from 'components/features/auths/ProtectedRoute';
 import { AwsAuthProps } from 'models/Types';
 
-Amplify.configure(awsExports);
+
 
 function App({ signOut, user }: AwsAuthProps ) {
+
   return (
     <div>
-      {
-        user ? (
-          <>
-            <h3>私は権限を持っています:{user.username}</h3>
-            <button onClick={signOut}>サインアウト</button>
-          </>
-        ): (
-          <h3>権限がありません</h3>
-        )
-      }
+      
     <UserProvider>
     <BrowserRouter>
     <Routes>
@@ -47,7 +35,7 @@ function App({ signOut, user }: AwsAuthProps ) {
         // </ProtectedRoute>
         }>
       </Route>
-      <Route path="/Register" element={<Register />}></Route>
+      <Route path="/Register" element={<Register signOut={signOut} user={user}/>}></Route>
       <Route path="/Result" element={ <Result /> }></Route>
     </Routes>
     </BrowserRouter>

@@ -5,6 +5,15 @@ const UserItems = () => {
 
     const {user} = useUser();
 
+    if (!user) {
+        return (
+            <div>
+                <p>ログインしてください</p>
+
+            </div>
+        );
+    }
+
     return (
         <div>
             <div>
@@ -12,7 +21,7 @@ const UserItems = () => {
             </div>
             <ul>
                 <li>
-                    名前：{user.name}
+                    名前：{user.username}
                 </li>
                 <li>
                     email：{user.email}
