@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AwsAuthProps } from 'models/Types'
+// import { AwsAuthProps } from 'models/Types'
 import { Amplify } from 'aws-amplify'; 
 
 import awsExports from "aws-exports"
@@ -8,7 +8,7 @@ import { useUser } from 'UserContext';
 
 Amplify.configure(awsExports);
     
-    const Dashboard = ({signOut}: AwsAuthProps) => {
+    const Dashboard = () => {
 
         const {user} = useUser();
 
@@ -18,7 +18,7 @@ Amplify.configure(awsExports);
             <Link to="/MyPage" className="button">マイページへ</Link>
             {user ? (
                 <div>
-                    <button onClick={signOut}>サインアウト</button>
+                    <button>サインアウト</button>
                 </div>
             ):(
                 <div>

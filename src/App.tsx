@@ -9,21 +9,17 @@ import Register from 'pages/Register';
 import Result from 'pages/Result';
 import 'styles/App.css';
 import ProtectedRoute from 'components/features/auths/ProtectedRoute';
-import { AwsAuthProps } from 'models/Types';
+// import { AwsAuthProps } from 'models/Types';
 
 
-
-function App({ signOut, user }: AwsAuthProps ) {
-  console.log("app user:",user);
+function App() {
 
   return (
     <div className="app-container">
-      {user && <button onClick={signOut}>サインアウト</button>}
-      
     <UserProvider>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home signOut={signOut} user={user} />}>
+      <Route path="/" element={<Home />}>
       </Route>
       <Route path="/game" element={
         <ProtectedRoute >
@@ -33,11 +29,11 @@ function App({ signOut, user }: AwsAuthProps ) {
       </Route>
       <Route path="/MyPage" element={
         // <ProtectedRoute>
-          <MyPage signOut={signOut} user={user}/> 
+          <MyPage /> 
         // </ProtectedRoute>
         }>
       </Route>
-      <Route path="/Register" element={<Register signOut={signOut} user={user}/>}></Route>
+      <Route path="/Register" element={<Register />}></Route>
       <Route path="/Result" element={ <Result /> }></Route>
     </Routes>
     </BrowserRouter>

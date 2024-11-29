@@ -52,18 +52,7 @@ export interface CodeProblemProps {
   problemData: CodeProblem;
   onComplete: () => void;
 }
-
-export interface AwsAuthProps {
-  signOut: () => void;
-  user: {
-    username: string,
-    attributes: {
-      email: string;
-    }
-  } | null;
-}
-
-// 型定義
+ 
 export interface User  {
   username: string;
   email: string;

@@ -1,19 +1,18 @@
 import React, { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from 'UserContext';
-import { AwsAuthProps } from 'models/Types';
+// import { AwsAuthProps } from 'models/Types';
 import { Authenticator,useAuthenticator } from '@aws-amplify/ui-react';
 
 
-const RegisterForm = ({user}: AwsAuthProps) => {
-    const [username,setName] = useState(user?.username || '');
+const RegisterForm = () => {
+    const [username,setName] = useState( '');
     const [email,setEmail] = useState('');
     // const [gitUserName,setGitUserName] = useState('');
     // const [githubRepo,setGithubRepo] = useState('');
     const navigate = useNavigate();
     const {setUser} = useUser();
 
-    console.log("user object",{user});
 
     // const mail = user?.attributes.email || "";
     // console.log("attributes email:",{mail});
@@ -30,7 +29,7 @@ const RegisterForm = ({user}: AwsAuthProps) => {
     <div>
         <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="username">名前：{user?.username} </label>
+                    <label htmlFor="username">名前：</label>
                     {/* <input type="text" id="name" value={username} onChange={(e) => setName(e.target.value) }></input> */}
                 </div>
                 <div>

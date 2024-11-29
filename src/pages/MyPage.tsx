@@ -1,9 +1,10 @@
 import * as Layouts from "components/layouts/Index"
 import * as MyPages from "components/features/mypage/Index"
-import { AwsAuthProps } from "models/Types";
+// import { AwsAuthProps } from "models/Types";
 import { useUser } from "UserContext";
+import Login from "./Login";
 
-const MyPage = ({signOut}: AwsAuthProps ) => {
+const MyPage = () => {
 
     const {user} = useUser();
     
@@ -12,9 +13,9 @@ const MyPage = ({signOut}: AwsAuthProps ) => {
             <Layouts.Header />
             <div>
                 <h2>マイページ</h2>
-                {user && <button onClick={signOut}>サインアウト</button>}
             </div>
             <MyPages.UserItems />
+            <Login />
         </div>
     );
 };
