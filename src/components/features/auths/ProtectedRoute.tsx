@@ -1,13 +1,9 @@
 import { ProtectedRouteProps } from 'models/Types';
 import { useUser } from 'UserContext';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { Amplify } from 'aws-amplify'; 
-import { withAuthenticator } from '@aws-amplify/ui-react';
 import "@aws-amplify/ui-react/styles.css";
 
-import awsExports from "aws-exports"
-Amplify.configure(awsExports);
 
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
@@ -21,7 +17,6 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
           <Link to="/Register" className='button'>新規登録/サインイン</Link>
         </div>
       )
-        // return <Navigate to="/Register" replace></Navigate>
     }
 
   return <>{children} </>;

@@ -5,8 +5,6 @@ import * as Auths from "components/features/auths/Index"
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import { AwsAuthProps } from 'models/Types';
 import awsExports from "aws-exports"
-import { useEffect } from 'react';
-import { useUser } from 'UserContext';
 
 Amplify.configure(awsExports);
 
