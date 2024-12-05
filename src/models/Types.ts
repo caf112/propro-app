@@ -38,12 +38,6 @@ export interface CodeRunnerProps {
   jsCode: string;
 }
 
-export interface User {
-  name: string;
-  email: string;
-  gitUserName: string;
-  githubRepo: string;
-}
 
 export interface UserContextProps {
   user: User;
@@ -58,3 +52,20 @@ export interface CodeProblemProps {
   problemData: CodeProblem;
   onComplete: () => void;
 }
+ 
+export interface User  {
+  username: string;
+  email: string;
+  // gitUserName: string;
+  // githubRepo: string;
+  [key: string]: any; 
+};
+
+export interface UserContextType  {
+  user: User | null;
+  setUser: (user: User | null) => void;
+};
+
+export interface UserProviderProps  {
+  children: ReactNode; 
+};

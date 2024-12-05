@@ -1,4 +1,7 @@
 import React, { FC } from 'react';
+import 'styles/Elements.css';
+import { Button } from "@mui/material"
+
 
 interface ButtonProps {
   label: string;
@@ -8,24 +11,23 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button: FC<ButtonProps> = ({
+const ButtonTemp: FC<ButtonProps> = ({
   label,
   onClick,
   type = 'button',
-  disabled = false,
-  className = '',
+  // disabled = false,
+  // className = '',
 }) => {
   return (
-    <button
+    <Button
       type={type}
       onClick={onClick}
-      disabled={disabled}
-      className={`button ${className}`}
-      style={{ marginRight: '8px', padding: '8px 16px' }}
+      // disabled={disabled}
+      // className={`button ${className}`}
     >
       {label}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default ButtonTemp;

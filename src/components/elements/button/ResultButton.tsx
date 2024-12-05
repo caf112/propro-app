@@ -1,4 +1,5 @@
 import React from 'react'
+import 'styles/Elements.css';
 import { ResultButtonProps } from 'models/Types';
 
 const ResultButton: React.FC<ResultButtonProps> = ({label,onClick}) => {

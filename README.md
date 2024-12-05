@@ -11,6 +11,15 @@
 - CSS
 - JavaScript
 
+## ツール
+- React
+- Material-UI(MUI)
+    - おすすめのUIライブラリ教えてください
+- AWS
+    - AWS Amplify
+    - AWS LambdaもしくはAWS DynamoDB
+- VSCode
+
 # ディレクトリ構成
 ## common
 共通

@@ -1,4 +1,5 @@
 import React from 'react'
+import * as Elements from "components/elements/Index"
 
 const GameScore: React.FC = () => {
 
@@ -15,6 +16,7 @@ const GameScore: React.FC = () => {
       <h2>ゲームスコア</h2>
         <p>あなたのスコア:{normalizedScore}点({score}/{totalScoreString})</p>
         {/* <p>あなたのスコア:{normalizedScore}点({normalizedScore.toFixed(1)}%)</p> */}
+      <Elements.ChangeButton path="/game" label="もう一度プレイする" ></Elements.ChangeButton>
     </div>
   )
 }
