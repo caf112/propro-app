@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
+import * as Layouts from "components/layouts/Index"
 
 const ModeSelector = () => {
   return (
-    <Box 
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        backgroundColor: '#f5f5f5',
-        textAlign: 'center',
-        p: 3,
-      }}
-    >
+    <div>
+      <Layouts.Header />
+      <Box 
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100vh',
+          backgroundColor: '#f5f5f5',
+          textAlign: 'center',
+          p: 3,
+        }}
+      >
       <Typography variant="h4" component="h1" gutterBottom>
         モード選択
       </Typography>
@@ -40,6 +43,7 @@ const ModeSelector = () => {
         </Button>
       </Box>
     </Box>
+    </div>
   );
 };
 
