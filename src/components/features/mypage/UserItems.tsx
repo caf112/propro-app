@@ -9,7 +9,7 @@ const UserItems = () => {
     if (!user) {
         return (
             <div>
-                <Link to="/Register" className="button">ログイン</Link>
+                <Elements.ChangeButton path="/Register" label="ログイン" />
                 <p>ログインしてください</p>
             </div>
         );

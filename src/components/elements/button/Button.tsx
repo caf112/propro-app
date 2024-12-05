@@ -15,16 +15,15 @@ const ButtonTemp: FC<ButtonProps> = ({
   label,
   onClick,
   type = 'button',
-  disabled = false,
-  className = '',
+  // disabled = false,
+  // className = '',
 }) => {
   return (
     <Button
       type={type}
       onClick={onClick}
-      disabled={disabled}
-      className={`button ${className}`}
-      style={{ marginRight: '8px', padding: '8px 16px' }}
+      // disabled={disabled}
+      // className={`button ${className}`}
     >
       {label}
     </Button>

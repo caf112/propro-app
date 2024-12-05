@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from 'UserContext';
+import { Button } from "@mui/material"
 // import { AwsAuthProps } from 'models/Types';
 import { Authenticator,useAuthenticator } from '@aws-amplify/ui-react';
 
@@ -41,7 +42,7 @@ const RegisterForm = () => {
                     <label htmlFor="github">Githubリポジトリ：</label>
                     <input type="text" id="githubRepo" value={githubRepo} onChange={(e) => setGithubRepo(e.target.value)}></input>
                 </div>
-                <button type="submit">登録</button>
+                <Button type="submit" variant="contained" >登録</Button>
             </form>
     </div>
   )
