@@ -1,17 +1,17 @@
-.button {
+/* .button {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px 0;
     text-align: center;
     text-decoration: none;
-    background-color: #007bff; /* ボタンの背景色 */
-    color: white; /* テキスト色 */
-    border-radius: 5px; /* 角丸にする */
+    background-color: #007bff; 
+    color: white; 
+    border-radius: 5px; 
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+    transition: background-color 0.3s ease; 
 }
 
 .button:hover {
-    background-color: #0056b3; /* ホバー時の色 */
-}
+    background-color: #0056b3; 
+} */

@@ -6,6 +6,8 @@ import { Amplify } from 'aws-amplify';
 import awsExports from "aws-exports"
 import { useUser } from 'UserContext';
 
+import { Button } from "@mui/material"
+
 Amplify.configure(awsExports);
     
     const Dashboard = () => {
@@ -23,6 +25,9 @@ Amplify.configure(awsExports);
             ):(
                 <div>
                 <Link to="/Register" className="button">新規登録/サインイン</Link>
+                <Button>MUI</Button>
+                <Button variant="contained">contained</Button>
+                <Button variant="outlined">outlined</Button>
                 </div>
             )}
         </div>
