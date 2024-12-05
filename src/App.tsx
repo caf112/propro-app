@@ -10,6 +10,7 @@ import Result from 'pages/Result';
 import Login from "pages/Login";
 import 'styles/App.css';
 import ProtectedRoute from 'components/features/auths/ProtectedRoute';
+import ModeSelector from "pages/ModeSelector";
 // import { AwsAuthProps } from 'models/Types';
 
 
@@ -21,15 +22,16 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/game" element={
+      <Route path="/ModeSelect" element={
         <ProtectedRoute >
-          <GamePage />
+          <ModeSelector />
         </ProtectedRoute>
         } />
+      <Route path="/game" element={<GamePage />} />
       <Route path="/MyPage" element={
-        // <ProtectedRoute>
+        <ProtectedRoute>
           <MyPage /> 
-        // </ProtectedRoute>
+        </ProtectedRoute>
         } />
       <Route path="/Register" element={<Register />} />
       <Route path="/Result" element={ <Result /> } />
