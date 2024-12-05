@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
         <div>
           <Link to="/"><img src="/usa/usa_syun_te.png" alt="header-logo" style={{ width: '200px', height: 'auto' }} /></Link>
           <h1>サインインが必要です</h1>
-          <Elements.ChangeButton path="/register" label="変更する" />
+          <Elements.ChangeButton path="/register" label="サインインする" />
         </div>
       )
     }
