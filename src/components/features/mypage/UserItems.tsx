@@ -9,8 +9,8 @@ const UserItems = () => {
     if (!user) {
         return (
             <div>
-                <p>ログインしてください</p>
                 <Link to="/Register" className="button">ログイン</Link>
+                <p>ログインしてください</p>
             </div>
         );
     }

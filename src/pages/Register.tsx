@@ -16,6 +16,8 @@ const Register = () => {
 
     return (
         <div>
+            <Layouts.Header />
+
             {user ?(
                 <div>
                 <p>ようこそ、{user.username}</p>
@@ -24,8 +26,7 @@ const Register = () => {
             ) :(
                 <p>ログインしてください</p>
             ) }
-            <Layouts.Header />
-            {/* <Auths.RegisterForm signOut={signOut} user={user} /> */}
+            <Auths.RegisterForm  />
         </div>
     );
 };
