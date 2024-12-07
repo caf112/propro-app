@@ -11,14 +11,17 @@ const Title = () => {
     return (
         <Box 
             textAlign="center" 
-            sx={{ py: 5, backgroundColor: '#f5f5f5', borderRadius: 2, mb: 3 }}
+            sx={{ py: 1, backgroundColor: '#f5f5f5', borderRadius: 2, mb: 1 }}
         >
             {/* <Avatar 
                 src="/usa/usa_niko.png" 
                 alt="titleLogo" 
                 sx={{ width: 300, height: 300, mx: 'auto', mb: 2 }} 
             /> */}
-            <img src="/usa/usa_niko.png" alt="titleLogo" style={{ width: '250px', height: 'auto' }} />
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
+                ※ ページを更新するとサインアウトされます
+            </Typography>
+            <img src="/usa/usa_niko.png" alt="titleLogo" style={{ width: '200px', height: 'auto' }} />
             <Typography variant="h4" component="h1" gutterBottom>
                 {user ? `ようこそ、${user.username}さん` : "ログインしてください"}
             </Typography>
