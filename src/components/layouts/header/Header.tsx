@@ -11,7 +11,7 @@ const HeaderWithToggleMenu = () => {
   const menuItems = [
     { text: 'ホーム', link: '/' },
     { text: 'マイページ', link: '/MyPage' },
-    { text: '教材', link: '/Lean' },
+    { text: '教材', link: '/SelectMaterials' },
     { text: '設定', link: '/Setting' },
   ];
 

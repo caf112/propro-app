@@ -69,3 +69,10 @@ export interface UserContextType  {
 export interface UserProviderProps  {
   children: ReactNode; 
 };
+
+
+export interface Material {
+  id: number;
+  title: string;
+  pdfUrl: string;
+};
