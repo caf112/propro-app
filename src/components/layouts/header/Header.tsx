@@ -9,9 +9,10 @@ const HeaderWithToggleMenu = () => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { text: 'Home', link: '/' },
-    { text: 'MyPage', link: '/MyPage' },
-    { text: 'Setting', link: '/' },
+    { text: 'ホーム', link: '/' },
+    { text: 'マイページ', link: '/MyPage' },
+    { text: '教材', link: '/Lean' },
+    { text: '設定', link: '/Setting' },
   ];
 
   return (
