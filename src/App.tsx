@@ -11,8 +11,9 @@ import Login from "pages/Login";
 import 'styles/App.css';
 import ProtectedRoute from 'components/features/auths/ProtectedRoute';
 import ModeSelector from "pages/ModeSelector";
-import LearnMaterials from "pages/LearnMaterials";
 import Setting from "pages/Setting";
+import LearnMaterial from "pages/LearnMaterial";
+import SelectMaterials from "pages/SelectMaterials";
 // import { AwsAuthProps } from 'models/Types';
 
 
@@ -40,7 +41,8 @@ function App() {
           <Route path="/Login" element={
             <Login />
           } />
-          <Route path="/Lean" element={<LearnMaterials />} />
+          <Route path="/SelectMaterials" element={<SelectMaterials />} />
+          <Route path="/Material/:id" element={<LearnMaterial /> } />
           <Route path="/Setting" element={<Setting /> } />
 
           {/* <Route path="/Test" element={
