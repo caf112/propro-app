@@ -11,7 +11,7 @@ const Title = () => {
     return (
         <Box 
             textAlign="center" 
-            sx={{ py: 1, backgroundColor: '#f5f5f5', borderRadius: 2, mb: 1 }}
+            sx={{ py: 1,  borderRadius: 2, mb: 1 }}
         >
             {/* <Avatar 
                 src="/usa/usa_niko.png" 
