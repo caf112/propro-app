@@ -21,7 +21,7 @@ const Title = () => {
             <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
                 ※ ページを更新するとサインアウトされます
             </Typography>
-            <img src="/usa/usa_niko.png" alt="titleLogo" style={{ width: '200px', height: 'auto' }} />
+            <img src="logo.png" alt="titleLogo" style={{ width: '300px', height: 'auto' }} />
             <Typography variant="h4" component="h1" gutterBottom>
                 {user ? `ようこそ、${user.username}さん` : "ログインしてください"}
             </Typography>
