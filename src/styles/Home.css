@@ -1,0 +1,14 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('/public/desktop/desktop.png');
+    background-size: cover; 
+    background-position: left bottom;
+    width: auto; 
+    height: 100vh; 
+}
