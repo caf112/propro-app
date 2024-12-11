@@ -7,8 +7,8 @@ import { Material } from "models/Types";
 
 const materials: Material[] = [
   { id: 1, title: "JavaScript", pdfUrl: "/materials/js.pdf" },
-  { id: 2, title: "2", pdfUrl: "/usa/usa_syun_te.png" },
-  { id: 3, title: "3", pdfUrl: "/usa/usa_niko_te.png" },
+  { id: 2, title: "2", pdfUrl: "/usa/usa_happy.png" },
+  { id: 3, title: "3", pdfUrl: "/usa/usa_huh.png" },
 ];
 
 const SelectMaterials: React.FC = () => {

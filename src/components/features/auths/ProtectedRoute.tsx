@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
       return (
         <div>
           <Layouts.Header />
-          <Link to="/"><img src="/usa/usa_syun_te.png" alt="header-logo" style={{ width: '200px', height: 'auto' }} /></Link>
+          <Link to="/"><img src="/usa/usa_cry.png" alt="header-logo" style={{ width: '200px', height: 'auto' }} /></Link>
           <h1>サインインが必要です</h1>
           <Elements.ChangeButton path="/register" label="サインインする" />
         </div>
