@@ -1,4 +1,6 @@
 import "@aws-amplify/ui-react/styles.css";
+import { ThemeProvider } from "@mui/material/styles";
+import Theme from "Theme.js"
 
 import { Route,Routes,BrowserRouter } from 'react-router-dom';
 import { UserProvider, useUser } from 'UserContext';
@@ -21,37 +23,39 @@ function App() {
 
   return (
     <div className="app-container">
-    <UserProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ModeSelect" element={
-            <ProtectedRoute >
-              <ModeSelector />
-            </ProtectedRoute>
+      <ThemeProvider theme={Theme} >
+      <UserProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/ModeSelect" element={
+              <ProtectedRoute >
+                <ModeSelector />
+              </ProtectedRoute>
+              } />
+            <Route path="/game" element={<GamePage />} />
+            <Route path="/MyPage" element={
+              <ProtectedRoute>
+                <MyPage /> 
+              </ProtectedRoute>
+              } />
+            <Route path="/Register" element={<Register />} />
+            <Route path="/Result" element={ <Result /> } />
+            <Route path="/Login" element={
+              <Login />
             } />
-          <Route path="/game" element={<GamePage />} />
-          <Route path="/MyPage" element={
-            <ProtectedRoute>
-              <MyPage /> 
-            </ProtectedRoute>
-            } />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/Result" element={ <Result /> } />
-          <Route path="/Login" element={
-            <Login />
-          } />
-          <Route path="/SelectMaterials" element={<SelectMaterials />} />
-          <Route path="/Material/:id" element={<LearnMaterial /> } />
-          <Route path="/Setting" element={<Setting /> } />
+            <Route path="/SelectMaterials" element={<SelectMaterials />} />
+            <Route path="/Material/:id" element={<LearnMaterial /> } />
+            <Route path="/Setting" element={<Setting /> } />
 
-          {/* <Route path="/Test" element={
-            <HeaderWithToggleMenu />
-            } /> */}
+            {/* <Route path="/Test" element={
+              <HeaderWithToggleMenu />
+              } /> */}
 
-        </Routes>
-      </BrowserRouter>
-    </UserProvider>
+          </Routes>
+        </BrowserRouter>
+      </UserProvider>
+    </ThemeProvider>
     
     </div>
   );
